@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class App</title>
+
+    <!--THIRD PARTY STYLES-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- MY STYLES -->
+
+    <link rel="stylesheet" href="styles/generics.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- THIRD PARTY SCRIPTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- MY SCRIPTS -->
+
+    <script src="scripts/index.js" type="module"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
+            viewBox="0 0 50 50" style="fill:#228BE6;">
+            <path
+                d="M 6 5 C 3.792969 5 2 6.792969 2 9 L 2 41 C 2 43.207031 3.792969 45 6 45 L 44 45 C 46.207031 45 48 43.207031 48 41 L 48 9 C 48 6.792969 46.207031 5 44 5 Z M 7 9 L 43 9 C 43.554688 9 44 9.449219 44 10 L 44 40 C 44 40.554688 43.554688 41 43 41 L 7 41 C 6.449219 41 6 40.554688 6 40 L 6 10 C 6 9.449219 6.449219 9 7 9 Z M 8 11 L 8 39 L 29 39 L 29 37 L 38 37 L 38 39 L 42 39 L 42 11 Z M 25 18 C 26.65625 18 28 19.34375 28 21 C 28 22.65625 26.65625 24 25 24 C 23.34375 24 22 22.65625 22 21 C 22 19.34375 23.34375 18 25 18 Z M 17 22 C 18.105469 22 19 22.894531 19 24 C 19 25.105469 18.105469 26 17 26 C 15.894531 26 15 25.105469 15 24 C 15 22.894531 15.894531 22 17 22 Z M 33 22 C 34.105469 22 35 22.894531 35 24 C 35 25.105469 34.105469 26 33 26 C 31.894531 26 31 25.105469 31 24 C 31 22.894531 31.894531 22 33 22 Z M 25 27 C 27.125 27 28.941406 27.890625 30 28.5625 L 30 32 L 20 32 L 20 28.5625 C 21.058594 27.890625 22.875 27 25 27 Z M 17 28.65625 C 17.347656 28.65625 17.679688 28.71875 18 28.78125 L 18 32 L 13 32 L 13 30.1875 C 13 30.1875 14.742188 28.65625 17 28.65625 Z M 33 28.65625 C 35.257813 28.65625 37 30.1875 37 30.1875 L 37 32 L 32 32 L 32 28.78125 C 32.320313 28.71875 32.652344 28.65625 33 28.65625 Z">
+            </path>
+        </svg>
+        <!-- <a class="header__home" href="/">Home</a> -->
+    </header>
+
+    <main>
+        <section class="add-page">
+            <div class="add-page__classroom">
+                <h1 class="add-page__classroom-name">Afsar's
+                    <span class="add-page__classroom-name-coloured">Classroom</span>
+                </h1>
+                <a class="add-page__back-to-student" href="/">Back to students</a>
+            </div>
+        </section>
+
+        <section class="add-form">
+            <h2 class="add-form__title">Add a student</h2>
+            <form name="add-student" class="add-student" class="student-form" novalidate>
+
+                <div class="form-container">
+                    <div class="form-row">
+                        <label for="name" class="label">Name</label>
+                        <input type="text" name="name" id="name" class="input" placeholder="Enter student name"
+                            required>
+                        <label for="name" class="error" aria-live="polite"></label>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="age" class="label">Age</label>
+                        <input type="text" name="age" id="age" class="input" placeholder="Enter age" required>
+                        <label for="age" class="error" aria-live="polite"></label>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <div class="form-row">
+                        <label for="gender" class="label">Gender</label>
+                        <select id="gender" name="gender" class="input" required>
+                            <option value="">Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="gender" class="error" aria-live="polite"></label>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="year" class="label">Year Group</label>
+                        <select id="year" name="year" class="input" required>
+                            <option value="">Select year group</option>
+                            <option>Year 7</option>
+                            <option>Year 8</option>
+                            <option>Year 9</option>
+                            <option>Year 10</option>
+                            <option>Year 11</option>
+                            <option>Year 12</option>
+                            <option>Year 13</option>
+                        </select>
+                        <label for="name" class="error" aria-live="polite"></label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="course" class="label">Course</label>
+                    <input type="text" id="course" name="course" placeholder="Enter course" class="input" required>
+                    <label for="course" class="error" aria-live="polite"></label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="reset-button">Reset</button>
+                    <button type="submit" class="submit-button">Add Student</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

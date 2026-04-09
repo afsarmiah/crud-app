@@ -1,0 +1,372 @@
+:root {
+  --font-family: 'Outfit';
+  --body-font-color: hsl(0, 0%, 14%);
+  --header-background-color: hsl(0, 0%, 17%);
+  --body-background-color: hsl(0, 0%, 94%);
+  --white-color: hsl(0, 0%, 100%);
+  --accent-color: hsl(226, 92%, 67%);
+  --update-color: hsl(85, 88%, 44%);
+  --delete-color: hsl(0, 100%, 61%);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.8rem;
+
+  color: var(--body-font-color);
+  background-color: var(--body-background-color);
+}
+
+.header {
+  background-color: var(--header-background-color);
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1.444em 2.333em 1.444em;
+  margin-block-end: 1.388em;
+}
+
+.header__home {
+  color: var(--white-color);
+  background: linear-gradient(
+    90deg,
+    hsl(226, 92%, 67%) 0%,
+    hsl(226, 43%, 65%) 100%
+  );
+
+  padding: 0.5em 1.444em;
+  border-radius: 2.777em;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.header__input {
+  color: var(--white-color);
+  background-color: var(--header-background-color);
+  caret-color: var(--white-color);
+
+  max-inline-size: 17.222em;
+  max-block-size: 2.333em;
+  padding: 0.55em 1em;
+  border: 1px solid hsla(0, 0%, 40%, 0.5);
+  border-radius: 2.777em;
+
+  &::placeholder {
+    color: var(--white-color);
+  }
+}
+
+.header__add {
+  color: var(--white-color);
+  background: linear-gradient(
+    90deg,
+    hsl(226, 92%, 67%) 0%,
+    hsl(226, 43%, 65%) 100%
+  );
+
+  padding: 0.5em 1.444em;
+  border-radius: 2.77em;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+}
+
+.classroom {
+  margin-block-end: 2.388em;
+}
+
+.classroom__name {
+  font-family: 'Montserrat';
+  font-size: 3rem;
+  font-weight: 600;
+
+  background-color: var(--white-color);
+
+  padding: 0.866em 1.4em 0.866em;
+  margin-block-end: 0em;
+}
+
+.classroom__name-coloured {
+  color: hsl(226, 92%, 67%);
+}
+
+.table-section {
+  padding: 0em 2.333em;
+}
+
+.table {
+  border-collapse: collapse;
+  min-inline-size: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table__header {
+  background-color: hsla(226, 43%, 65%, 0.3);
+}
+
+.table__header-label {
+  font-weight: 500;
+
+  text-align: left;
+
+  padding: 1em 1.111em;
+}
+
+.table__header-label:first-child {
+  padding-inline-start: 2.777em;
+}
+
+.table__header-label:last-child {
+  padding-inline-end: 0em;
+}
+
+.table__body {
+  background-color: var(--white-color);
+}
+
+.table__body-row {
+  border-block-end: 1px solid hsla(0, 0%, 40%, 0.2);
+}
+
+.table__body-row:last-child {
+  border-block-end: none;
+}
+
+.table__body-info {
+  padding: 1em 1.111em;
+  vertical-align: middle;
+}
+
+.table__body-info:first-child {
+  padding-inline-start: 2.777em;
+}
+
+.table__body-info:last-child {
+  padding-inline-end: 0em;
+}
+
+.table__actions {
+  display: flex;
+  gap: 0.555em;
+}
+
+.table__update-button {
+  background-color: var(--update-color);
+  color: var(--white-color);
+  min-inline-size: 2.111em;
+  aspect-ratio: 1;
+  border-radius: 0.555em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: hsl(84, 70%, 45%);
+  }
+}
+
+.table__delete-button {
+  background-color: var(--delete-color);
+  color: var(--white-color);
+  min-inline-size: 2.111em;
+  aspect-ratio: 1;
+  border-radius: 0.555em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: hsl(4, 90%, 48%);
+  }
+}
+
+.table__update-button i,
+.table__delete-button i {
+  font-size: 0.833em;
+}
+
+/****************************************/
+
+.add-page__classroom {
+  font-size: 3rem;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.866em 1.4em 0.866em;
+  margin-block-end: 1.433em;
+}
+
+.add-page__classroom-name {
+  font-family: 'Montserrat';
+  font-size: 3rem;
+  font-weight: 600;
+
+  margin-block-end: 0em;
+}
+
+.add-page__classroom-name-coloured {
+  color: var(--accent-color);
+}
+
+.add-page__back-to-student {
+  font-size: 1.8rem;
+  color: var(--white-color);
+  background: linear-gradient(
+    90deg,
+    hsl(226, 92%, 67%) 0%,
+    hsl(226, 43%, 65%) 100%
+  );
+
+  padding: 0.5em 1.444em;
+  border-radius: 2.77em;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+}
+
+.add-form {
+  font-family: 'Outfit';
+  font-size: 1.8rem;
+  color: var(--body-font-color);
+  padding: 0em 2.333em;
+  padding-block-end: 2.388em;
+}
+
+.add-form__title {
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  font-weight: 600;
+
+  background-color: rgba(127, 145, 204, 0.3);
+  padding-block-start: 1em;
+  padding-block-end: 0.75em;
+  padding-inline-start: 1em;
+  margin-block-end: 0em;
+}
+
+.add-student {
+  background-color: var(--white-color);
+
+  padding: 0.8333em 1.111em;
+}
+
+.form-container {
+  display: flex;
+  gap: 1.277em;
+}
+
+.form-row {
+  margin-block-end: 1.111em;
+  flex: 1;
+}
+
+.label {
+  font-weight: 500;
+  display: block;
+  margin-block-end: 0.833em;
+
+  &::after {
+    content: ' *';
+    color: hsl(0, 100%, 50%);
+  }
+}
+
+label.error {
+  font-size: 1.4rem;
+  color: var(--delete-color);
+  display: block;
+  margin-block-start: 0.428em;
+}
+
+.input {
+  display: block;
+
+  min-inline-size: 100%;
+  min-block-size: 3.222em;
+
+  padding: 0.888em;
+
+  border-radius: 2.777em;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+
+  &::placeholder {
+    color: hsla(0, 0%, 40%, 0.3);
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: 1.111em;
+  justify-content: center;
+}
+
+.submit-button {
+  color: var(--white-color);
+  background: linear-gradient(
+    90deg,
+    hsl(226, 92%, 67%) 0%,
+    hsl(226, 43%, 65%) 100%
+  );
+
+  padding: 0.5em 1.444em;
+
+  border-radius: 2.77em;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+
+  &:disabled {
+    background: linear-gradient(
+      90deg,
+      hsl(226, 30%, 75%) 0%,
+      hsl(226, 20%, 78%) 100%
+    );
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.reset-button {
+  color: hsl(0, 0%, 40%);
+  background: var(--white-color);
+
+  padding: 0.5em 1.444em;
+
+  border-radius: 2.77em;
+  border: none;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  &:hover {
+    color: hsl(0, 0%, 20%);
+    border-color: rgba(102, 102, 102, 0.6);
+  }
+}
