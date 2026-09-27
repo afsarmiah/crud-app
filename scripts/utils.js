@@ -1,7 +1,7 @@
 function serialize(form) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
-  console.log(data);
+  // console.log(data);
 
   // If you have checkboxes or selects in multiple mode
   const multis = Array.from(
@@ -21,7 +21,7 @@ function serialize(form) {
 }
 
 function populate(form, data = {}) {
-  console.log('populate data', data);
+  // console.log('populate data', data);
   if (!form || !(form instanceof HTMLFormElement)) {
     throw new Error(
       `The populate function requires a form element. Instead received $form} of type ${form?.prototype?.Constructor?.name}`,
@@ -101,19 +101,19 @@ function validate(input) {
   const formRow = input.closest('.form-row');
   const errorLabel = formRow.querySelector('label.error');
 
-  console.log('errorLabel', errorLabel);
+  // console.log('errorLabel', errorLabel);
 
   errorLabel.textContent = '';
 
   const validityState = input.validity;
-  console.log('validityState', validityState);
+  // console.log('validityState', validityState);
 
   if (validityState.valueMissing) {
     errorLabel.textContent = 'This field be must filled out!';
   }
 
   if (validityState.valid) {
-    console.log('valid', validityState);
+    // console.log('valid', validityState);
   }
 }
 

@@ -10,9 +10,9 @@ export default class Student {
       throw new Error(`You must not leave the name input field empty`);
     }
 
-    // if (typeof age !== 'number') {
-    //   throw new Error(`The age must be a number and not ${typeof age}`);
-    // }
+    if (typeof age !== 'number') {
+      throw new Error(`The age must be a number and not ${typeof age}`);
+    }
 
     if (!age) {
       throw new Error(`You must not leave the age input field empty`);
@@ -48,3 +48,5 @@ export default class Student {
     Object.freeze(this);
   }
 }
+
+// Here is our Class responsible for purely creating our students data object. Everytime we add a student, we'll use this class, as seen in App.js.

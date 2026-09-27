@@ -4,24 +4,38 @@ import { serialize, populate, resetAllFormFields, validate } from './utils.js';
 const addForm = document.forms['add-student'];
 const updateForm = document.forms['update-student'];
 const tableBody = document.getElementById('table_body');
+const filterInput = document.getElementById('filter');
 
 const afsarsClassroom = new App();
 
+if (filterInput) {
+  filterInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value;
+
+    const filteredStudents = afsarsClassroom.filterStudents(searchTerm);
+
+    console.log('searchTerm:', searchTerm);
+    console.log('filteredStudents:', filteredStudents);
+
+    renderStudents(filteredStudents);
+  });
+}
+
 function createStudent(student) {
-  console.log('createStudent', student);
+  // console.log('createStudent', student);
   const { name, age, gender, year, course, _id } = student;
-  console.log(name);
-  console.log(age);
-  console.log(gender);
-  console.log(year);
-  console.log(course);
-  console.log(_id);
+  // console.log(name);
+  // console.log(age);
+  // console.log(gender);
+  // console.log(year);
+  // console.log(course);
+  // console.log(_id);
 
   const tableRow = document.createElement('tr');
   tableRow.classList.add('table__body-row');
 
   const fields = [name, age, gender, year, course];
-  console.log('fields', fields);
+  // console.log('fields', fields);
 
   fields.forEach((field, index) => {
     const tableData = document.createElement('td');
@@ -53,7 +67,7 @@ function createStudent(student) {
 }
 
 function renderStudents(students) {
-  console.log('renderstudent', students);
+  // console.log('renderstudent', students);
 
   if (!tableBody) return;
 
@@ -101,7 +115,7 @@ if (tableBody) {
 
 if (addForm) {
   addForm.addEventListener('reset', () => {
-    console.log('Form Reset');
+    // console.log('Form Reset');
     resetAllFormFields(addForm);
   });
 
@@ -110,8 +124,13 @@ if (addForm) {
 
     const data = serialize(addForm);
 
-    const createdStudent = afsarsClassroom.createStudent(data);
-    console.log('createdStudent', createdStudent);
+    const studentData = {
+      ...data,
+      age: Number(data.age),
+    };
+
+    const createdStudent = afsarsClassroom.createStudent(studentData);
+    // console.log('createdStudent', createdStudent);
 
     resetAllFormFields(addForm);
   });
@@ -175,7 +194,7 @@ if (addForm) {
 
 if (updateForm) {
   updateForm.addEventListener('reset', () => {
-    console.log('Form Reset');
+    // console.log('Form Reset');
     resetAllFormFields(updateForm);
   });
 
@@ -183,6 +202,8 @@ if (updateForm) {
     e.preventDefault();
 
     const updatedData = serialize(updateForm);
+    updatedData.age = Number(updatedData.age);
+
     console.log('updatedData', updatedData);
 
     const { _id, ...remainingData } = updatedData;
@@ -190,7 +211,7 @@ if (updateForm) {
     console.log('pre data', remainingData);
 
     afsarsClassroom.updateStudent(_id, remainingData);
-    console.log('post data', ...remainingData);
+    console.log('post data', remainingData);
   });
 
   const submitButton = document.querySelector('[type = "submit"]');

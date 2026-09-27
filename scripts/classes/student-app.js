@@ -29,12 +29,14 @@ export default class App {
 
   createStudent(student) {
     const newStudent = new Student(student);
-    console.log(newStudent);
-    this.#students = this.#students.toSpliced(
-      this.#students.length,
-      0,
-      newStudent,
-    );
+    // console.log(newStudent);
+    // this.#students = this.#students.toSpliced(
+    //   this.#students.length,
+    //   0,
+    //   newStudent,
+    // );
+
+    this.#students = [...this.#students, newStudent]; // More modern way
     this.persistData();
     return newStudent._id;
   }
@@ -55,7 +57,6 @@ export default class App {
     if (!student.length) {
       return console.log(`No students to display`);
     }
-    console.table(student);
   }
 
   updateStudent(id, updates) {
@@ -68,13 +69,13 @@ export default class App {
     if (idx === -1) {
       throw new Error(`The student with id of ${id} does not exist`);
     }
-    console.log(idx);
+    console.log('idx', idx);
 
     const studentToUpdate = this.#students[idx];
-    console.log(studentToUpdate);
+    console.log('studentToUpdate', studentToUpdate);
 
     const updatedStudent = new Student(deepmerge(studentToUpdate, updates));
-    console.log(updatedStudent);
+    console.log('updatedStudent', updatedStudent);
 
     this.#students = this.#students.toSpliced(idx, 1, updatedStudent);
 
@@ -93,7 +94,7 @@ export default class App {
     if (idx === -1) {
       throw new Error(`The student with id of ${id} does not exist`);
     }
-    console.log(idx);
+    console.log('idx', idx);
 
     const studentToDelete = this.#students[idx];
     console.log(studentToDelete);
@@ -110,8 +111,16 @@ export default class App {
       return student._id === id;
     });
 
-    console.log(student);
+    // console.log(student);
     return student;
+  }
+
+  filterStudents(searchTerm) {
+    const search = searchTerm.trim().toLowerCase();
+
+    return this.#students.filter((student) =>
+      student.name.toLowerCase().includes(search),
+    );
   }
 
   persistData() {
